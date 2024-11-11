@@ -1,0 +1,488 @@
+/* Importando as fontes Poopins e Lobster Google fontes  */
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;700&display=swap');
+
+/* Definindo variáveis, espaço na memória para ser usado depois 
+*/
+:root {
+
+    /* Fontes  */
+
+    --fonte-1: "Poppins", sans-serif;
+    --fonte-2: "Lobster", sans-serif;
+
+
+
+
+    /* Cores  */
+    --cor-principal: #747dff;
+    --cor-realce: #ffad32;
+    --cor-principal-alpha:#747dff3c;
+    --cor-nivel-1:#ffe7c2;
+    --cor-nivel-2:#bdacff;
+    --cor-1:#f9f9f9;
+    --cor-2:#b8c0c7;
+    --cor-3:#767f86;
+    --cor-4:#3c4852;
+    --cor-5:#00000043;
+
+    /* box shadow coloca sobra em volta dos elementos */
+    --sombra: 0 0.3rem 0.4rem 0.1rem var(--cor-5);
+
+}
+
+/* Limpa configurações de navegadores*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html {
+    font-family: var(--fonte-1);
+    font-size: 18px;
+}
+
+body {
+    color: var(--cor-4);
+}
+
+/* Barra de navegação com menu */
+nav {
+    display: flex;
+    flex-direction: row; /* uma do lado da outra em linha */
+    justify-content: space-between; /* deixa um elemento de um lado e o outro do outro
+    lado deixando um espaço entre eles */
+    align-items: center; /* alinha os itens no centro da barra */
+
+   
+    background-color: var(--cor-principal-alpha);
+    padding: 0.6 rem 3rem /* espaçamento interno 0.6 rem em cima e em
+    baixo e 3rem nas laterais */;
+    color: var(--cor-1);
+    letter-spacing: 0.1rem; /* espaçamento entre as letras*/
+    position: fixed; /* deixa a barra fixa e por cima dos outro elementos*/
+    width: 100%; /*ajusta a barra para pegar toda a janela devido ter colocado
+    a position fixed */
+    z-index: 10;
+    top: 0;
+    left: 0;
+}
+
+.logo {
+    font-family: var(--fonte-2);
+    font-size: 1.5rem;
+}
+
+.menu a, .drop-conteudo a {
+    text-decoration: none;
+    color: var(--cor-1);
+    font-weight: 700;
+    padding: 0.6rem 1rem;
+    transition: 0.5s;
+}
+
+.menu a:hover, .drop-conteudo a:hover {
+    color: var(--cor-realce);
+}
+
+
+ /* Banner e calendário */
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url(../img/banner1.jpg); /*ocupa 96% da página*/
+    background-size: cover ; /* cobre o máximo possível da altura e largura*/
+    background-position: 50% 50%; /* ocupa da largura e altura */
+
+    height: 96vh;
+}
+
+header div {
+    width: 100%;
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--cor-1);
+    font-size: 2rem;
+    font-weight: 700; /* fonte ficar em negrito */
+    letter-spacing: 0.1rem; /* espaçamento entre as letras */
+    word-spacing: 0.5rem ;   /* espaçamento entre palavras  */
+    height: 100%; /* altura para acompanhar toda a imagem */
+    
+    text-shadow: 0.2rem    0        0.2rem var(--cor-4);
+    /*          eixo x    eixo y    desfoque */
+}
+
+.reserva {
+    background-color: var(--cor-principal-alpha);
+    padding: 0.8rem 3rem;
+}
+
+.reserva form {
+    background-color: var(--cor-1);
+    color: var(--cor-3);
+    padding: 1rem 1.4rem;
+    display: flex;
+    align-items: end;
+    border-radius: 0.2rem;
+}
+
+form label {
+    display: block; /* usa só o espaço que convém */
+}
+
+form input {
+    font-size: 1rem;
+    width: 80%;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    border: solid 0.1rem var(--cor-2);
+}
+
+button {
+    background-color: var(--cor-realce);
+    color: var(--cor-1);
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.6rem 1.6rem;
+    border-radius: 0.5rem;
+    border: none;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: var(--cor-principal);
+    cursor: pointer;
+}
+
+section {
+    margin: 2.5rem auto;
+    padding: 6rem 3rem;
+    min-height: 100vh;
+
+
+}
+
+/* Sessão passeios  */
+.passeios {
+    display: flex;
+}
+
+.passeios h1 {
+    font-family: var(--fonte-2);
+    color: var(--cor-principal);
+}
+
+.passeios hr {
+    margin: 1rem 0;
+    border: solid var(--cor-realce);
+    border-radius: 1rem;
+    width: 15rem;
+}
+
+.passeios p {
+    margin: 1rem 0;
+}
+
+.inform-passeio {
+    text-align: justify;
+    padding-right: 3rem;
+    flex: 1;
+}
+
+.fotos-passeio {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap; /* faz caber dentro do pacote */
+    gap: 1rem; /*afastamento entre cada elemento */
+    flex: 1;
+}
+
+.foto {
+    width: calc(50% - 0.5rem);
+    border: solid 0.6rem var(--cor-1);
+    border-radius: 0.5rem;
+    box-shadow: var(--sombra);
+}
+
+.foto img {
+    width: 100%;
+    display: flex;
+}
+
+/* Destinos */
+.destinos {
+    background: linear-gradient(
+        50deg, var(--cor-nivel-1),  var(--cor-nivel-2));
+}
+
+.destinos h1 {
+    font-family: var(--fonte-2);
+    color: var(--cor-principal);
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.grupo-destinos {
+    padding: 0 3rem;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 3rem 1.2rem; /* afastamento de cim e baixo e laterais */
+
+
+}
+
+.card-destino {
+    padding: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cor-1);
+    border-radius: 0.5rem;
+    box-shadow: var(--sombra);
+}
+
+.card-destino img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+}
+
+.card-destino > div {
+    padding: 1rem;
+}
+
+.card-destino span {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.card-destino p {
+    margin: 1rem 0;
+    text-align: justify;
+    color: var(--cor-3);
+}
+
+.valor {
+    display: flex;
+    justify-content: end;
+    align-items: baseline;
+    margin: 1rem auto;
+}
+
+.valor div {
+    display: flex;
+    justify-content: start;
+    align-items: end;
+
+}
+
+.valor span {
+    text-decoration: line-through;
+    font-size: 0.8rem;
+    color: var(--cor-3);
+    margin-left: 0.5rem;
+}
+
+.card-botao {
+    text-align: right;
+} 
+
+/* Avaliações */ 
+
+.avaliacoes {
+    text-align: center;
+    width: 75%;
+    min-height: 50vh;
+    margin: 1rem auto;
+    padding: 6rem 3rem 2rem;
+}
+
+.avaliacoes h1 {
+    font-family: var(--fonte-2);
+    color: var(--cor-principal);
+}
+
+.avaliacoes p {
+    margin: 1rem auto;
+    color: var(--cor-3);
+}
+
+.avaliacoes img {
+    border: solid 0.2rem var(--cor-realce);
+    border-radius: 50%;
+    background-color: var(--cor-realce);
+    outline: none;
+    width: 10rem;
+}
+
+.avaliacoes span {
+    font-weight: 700;
+}
+
+.carrosel {
+    position: relative;
+    padding: 0 5rem;
+    margin: auto;
+}
+
+.carrosel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--cor-5);
+    color: var(--cor-1);
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: 0.3s;
+}
+.carrosel button:hover {
+    background-color: var(--cor-3);
+}
+
+.anterior {
+    left: 0;
+}
+
+.proximo {
+    right: 0;
+}
+
+
+/* Rodapé */
+
+footer {
+    background-color: var(--cor-4);
+    color: var(--cor-2);
+    padding: 2rem 5rem;
+    display: flex;
+    font-size: 0.8rem;
+}
+
+footer div {
+    flex: 1;
+    padding: 0 0.3rem;
+}
+
+
+footer h3 {
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+
+}
+
+footer .entrar-grupo {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 0 1.5rem;
+
+}
+
+footer input {
+    background-color: var(--cor-1);
+    color: var(--cor-4);
+    letter-spacing: 0.1rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.1rem; 
+    width: 100%;
+}
+
+footer button {
+    padding: 0.3rem 1.4rem;
+    border-radius: 0.3rem;
+}
+
+footer hr {
+    margin: 1rem 0;
+}
+
+.empresa p {
+    margin: 2rem 0;
+
+}
+
+.empresa span {
+    font-weight: 700;
+    display: block;
+}
+
+.rede-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.rede-social i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.2rem;
+    border: solid 0.15rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.rede-social i:hover {
+    color:var(--cor-realce);
+    border-color: var(--cor-realce);
+}
+
+.rodape {
+    width: 100%;
+    height: 3rem;
+    background-color: var(--cor-principal);
+}
+
+.drop-menu {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.drop-button{
+    padding: 0;
+    padding-bottom: 0.25rem;
+    background-color: inherit;
+}
+
+.barra {
+    width: 2rem;
+    height: 0.28rem;
+    transition: 0.3s;
+    margin-top: 0.3rem;
+    border-radius: 0.2rem;
+    background-color: var(--cor-1);
+
+}
+
+.drop-conteudo {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 3rem;
+    right: 0;
+    background-color: var(--cor-principal-alpha);
+    box-shadow: var(--sombra);
+}
+
+.drop-conteudo a {
+    display: block;
+}
+
+.drop-conteudo a:hover {
+    color: var(--cor-realce);
+
+}
+
+.drop-menu:hover .drop-conteudo {
+    display: block;
+}
